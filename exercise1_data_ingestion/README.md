@@ -1,61 +1,46 @@
 # Exercise 1: Data Ingestion
 
-In this exercise you will connect to your data sources and store the data into a file, using Apache NiFi.
+In this exercise we will learn to ingest data in real-time into the architecture so, at the end, we will have cryptocurrency prices flowing in real-time through NiFi to Kafka.
 
 ![Exercise architecture](../img/architecture_exercise1.png)
 
-## Data sources
+## Data source
 
-* **IEX Cloud**: https://iexcloud.io/
-  * Sign up to create an account
-  * Tickers URL: https://cloud.iexapis.com/stable/stock/market/collection/sector?collectionName=Technology&token=your_token
-    * **TIP**: Replace "your_token" string with your own token
-    * More on this call: https://iexcloud.io/docs/api/#collections
-    * It will return a collection of quotes: https://iexcloud.io/docs/api/#quote
-  * In the "API Tokens", use the "PUBLISHABLE" type token
+The data source we will be using for this exercise is [**Coinbase**](https://www.coinbase.com/), where they have a full API, including the delivery of real-time data via WebSockets.
 
-* **Twitter**: https://developer.twitter.com/
-  * Sign up to create an account, if you don't already have one, or just sign in if you do
-  * Create app (more info: https://docs.inboundnow.com/guide/create-twitter-application/)
+For a reference of the API follow the below link:
 
-## Setup (Optional)
-
-> **NOTE**: This setup is only required if you don't want to run the architecture using Docker and you prefer to install it yourself. At your own risk. :-)
-
-Download the latest version of the Apache NiFi binaries (e.g. **nifi-1.11.4-bin.zip**):
-
-* https://nifi.apache.org/download.html
-
-Unzip and run:
-
-```
-\nifi-1.11.4\bin\run-nifi.bat
-```
-
-Wait about 30 seconds for it to be ready.
+* https://docs.pro.coinbase.com/
 
 ## Development
 
+### Setup
+
+Start the NiFi service:
+
+```
+docker-compose start nifi
+```
+
 Once it is running, go to http://localhost:8090/nifi
 
-In the NiFi canvas, you will need to create the following:
 
-* Read from IEX Cloud REST Service (**InvokeHTTP** processor) and save to file (**PutFile** processor)
-  * You will need the tickers REST URL (see "Data Sources", adding your own token)
-  * Set the scheduler to every 30 seconds
-  * Link both processors (using the "Response" output), and terminate the rest of the outputs
-  * Terminate the rest of the outputs in the InvokeHTTP processor
+### Part 1: Basic NiFi workflow
 
-![NiFi Configuration HTTP](../img/exercise1_nifi1.png)
+This will be explained during the class.
 
-* Read from Twitter (**GetTwitter** processor) and save to file (**PutFile** processor)
-  * You will need the credentials from your Twitter app
-  * Link both processors (using the "success" output)
-  * Terminate the rest of the outputs in the GetTwitter processor
+### Part 2: Getting cryptocurrencies prices from Coinbase
 
-![NiFi Configuration Twitter](../img/exercise1_nifi2.png)
+In this part we will be getting data in real-time from Coinbase's websockets, and storing locally for testing purposes.
 
-At any time you can run the processors and clicking on the "Start" button (on the left "Operate" box). Or right click on any processor and press "Start" in order to start just that processor.
+Steps:
+
+* Stop (or even remove) previous processors
+* Load template
+  * Upload Template `nifi/Coinbase.xml` 
+  * Add template
+  * Configure services (secrets)
+* Run
 
 If you want to **check the results** (files saved), they will be available in the NiFi Docker container (if using Docker). Do the following to check it:
 
@@ -65,7 +50,20 @@ docker exec -it <nifi_container_id> /bin/bash
 ls -l <folder_configured_in_PutFile_Processor>
 ```
 
-For more info on how the processors work, read the [Apache NiFi documentation](https://nifi.apache.org/docs.html).
+### Part 3: Send to Kafka
 
-**IMPORTANT**: In case you get stuck, feel free to use the template in the "nifi" folder. You can upload it by righ-clicking on the canvas and select "Upload template", then Drag & Drop the "Template" from the top menu.
+Start the Kafka services:
 
+```
+docker-compose start zookeeper broker control-center
+```
+
+Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics").
+
+Now change the NiFi workflow to send messages to Kafka instead of saving to file.
+
+**TIP**: Replace the **PutFile** processor for **PublishKafka_2_6**.
+
+# Reference
+
+* [Apache NiFi documentation](https://nifi.apache.org/docs.html)

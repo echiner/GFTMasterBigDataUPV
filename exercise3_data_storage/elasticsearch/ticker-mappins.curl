@@ -1,0 +1,10 @@
+PUT tickers
+{
+  "mappings": {
+    "properties": {
+      "price": {
+        "type": "float"
+      }
+    }
+  }
+}

@@ -1,52 +1,49 @@
 # Exercise 2: Data Processing
 
-In this exercise you will connect Nifi ingestion with Flink data processing
+In this exercise you will start reading and processing data in real-time using Spark Streaming.
 
 ![Exercise architecture](../img/architecture_exercise2.png)
 
-## Setup (Optional)
-
-> **NOTE**: This setup is only required if you don't want to run the architecture using Docker and you prefer to install it yourself. At your own risk. :-)
-
-Download Kafka stack and visualization tool:
-
-* Confluent Kafka stack: [Confluent 5.2.2](http://packages.confluent.io/archive/5.2/confluent-5.2.2-2.11.tar.gz?_ga=2.174462370.1890803127.1563567511-395073974.1561650126)
-* Kafka tool & Avro plugin:
-	* Download installer : http://www.kafkatool.com/ 
-		
-Unzip and launch it:
-
-* Zookeeper :
-```
-confluent-5.2.2\bin\windows\zookeeper-server-start.bat  confluent-5.2.2\etc\kafka\zookeeper.properties
-```
-
-* Kafka broker:
-```
-confluent-5.2.2\bin\windows\kafka-server-start.bat confluent-5.2.2\etc\kafka\server.properties
-```
-
 ## Development
 
-* **NiFi**
-	* Upload Template `nifi/twitter_quotes_upv_ingestor.xml` 
-		* Rigth click, select the template that is inside GFTMasterBigDataUPV/exercise2_data_processing/nifi
-	* Configure GetTwitter box access credentials (Consumer and Access Token)
-	* Configure IEX Cloud token on InvokeHTTP box rest call URL.
-	* Configure PublishKafka boxes Kafka URL (port is 29092) and the topic names (tweets and quotes)
-	> **Hint**: You should use internal docker host name for kafka. 
+### Setup
 
-	* Configure RouteOnAtribute box and filter over Microsoft, Uber, Twitter, Facebook additionally to the Google already defined.
-	* Check that the messages are populated on the topics:
-		* Use Confluent Control Center (http://localhost:9021)
-* **Flink processing**
-	* Filter the quotes for a list of 10 main technological companies (already defined on appConfig.properties file) 
-		* Configure companies filter on `src/main/java/com/gft/upv/flink/proccess/FilterCompanies.java`. You can  get in-scope companies from appConfig.getInScopeCompanies()
-	* Enrich quotes messages data adding companies information 
-		* Configure enrichment on `src/main/java/com/gft/upv/flink/proccess/EnrichCompany.java`
-	* Add those steps to filter the main companies and add companies static data.  
-		* Add those  two steps on `src/main/java/com/gft/upv/flink/StreaminStockJob.java`
-* **Confluent Control Center for Output Visualization**
-	* Connect  to quotesEnriched topic and see output messages.
+First of all, make sure the following services are up and running:
 
-In case you need help, you can check Flink API here --> https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/datastream_api.html
+* nifi
+* zookeeper
+* broker
+* control-center
+
+If they are not running, check the previous exercises to understand how to run them.
+
+Start your IDE (ideally IntelliJ) and import the code under `spark`.
+
+### Part 1: Read data from Kafka, process and show in console
+
+The code should be ready to run, as it is. So just run the main class (`com.gft.upv.spark.TickerProcessor`).
+
+The code is doing the following:
+
+* Connect to Kafka and retrieve messages (it will start from the beginning of the topic)
+* Convert the incoming JSON into a Dataframe
+* Create a SQL on that dataframe
+* Show the results in the console
+
+Now, understand the code and feel free to play around with it (specially with the SQL query). The SQL query is the logic we will be applying to the stream.
+
+### Part 2: Send transformed data back to Kafka
+
+Now that we have tested that we are processing data in real-time coming from Kafka and decided the logic (SQL query), let's send the data back to another Kafka topic. For doing so, comment the "streaming to console" part and uncomment the "sending to kafka" part.
+
+If the code is working fine, all the newly generated data will be sent to a new topic (**tickers_transformed**). You should be able to see the messages in Control Center (under the "Topcis" section).
+
+## Troubleshooting
+
+https://sparkbyexamples.com/spark/spark-hadoop-exception-in-thread-main-java-lang-unsatisfiedlinkerror-org-apache-hadoop-io-nativeio-nativeiowindows-access0ljava-lang-stringiz/
+https://github.com/cdarlint/winutils
+
+# Reference
+
+* [Spark 3.0.0 - Documentation](https://spark.apache.org/docs/3.0.0/)
+* [Spark 3.0.0 - Structured Streaming](https://spark.apache.org/docs/3.0.0/structured-streaming-programming-guide.html)

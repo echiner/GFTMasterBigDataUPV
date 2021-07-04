@@ -40,8 +40,6 @@ This will launch the following components, which will be used during the course:
 | **Elasticsearch**  | elasticsearch | Data storage and search engine  | http://localhost:9200  |
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |
 | **Jupyter**  | jupyter | Notebooks analytics  | http://localhost:8888  |
-| **cAdvisor**  | monitor | (Optional) Docker monitoring tool  | http://localhost:8080  |
-
 
 In order to **stop** the infrastructure:
 
@@ -58,7 +56,7 @@ docker-compose start -d
 ## Software requirements
 
 * IDE for Java development (your choice)
-  * https://www.eclipse.org/downloads/packages/ (RECOMMENDED)
+  * https://www.eclipse.org/downloads/packages/ (**RECOMMENDED**)
   * https://www.jetbrains.com/idea/download/ (Choose InteliJ Community)
 * Maven (for dependencies Management)
   * https://maven.apache.org/download.cgi
@@ -83,7 +81,7 @@ docker-compose start -d
 
 ## Admin & Troubleshooting
 
-The easiest way to do many of these things is to use, either the Docker desktop console or a tool such as **[Lazydocker](https://github.com/jesseduffield/lazydocker)**:
+The easiest way to do many of these things is to use, either the Docker Desktop Dashboard or a tool such as **[Lazydocker](https://github.com/jesseduffield/lazydocker)**:
 
 1. Download the binary: https://github.com/jesseduffield/lazydocker/releases
 2. Uncompress
@@ -120,4 +118,3 @@ docker logs <CONTAINER ID or NAME>
 ```
 docker-compose down -d
 ```
-

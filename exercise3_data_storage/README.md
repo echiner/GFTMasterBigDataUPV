@@ -1,31 +1,32 @@
 # Exercise 3: Data Storage
 
-In this exercise you will store real-time messages on Elastic Search from Flink
+In this exercise you will store real-time messages on Elasticsearch:
 
 ![Exercise architecture](../img/architecture_exercise3.png)
 
-## Setup (Optional)
-
-> **NOTE**: This setup is only required if you don't want to run the architecture using Docker and you prefer to install it yourself. At your own risk. :-)
-
-Download Elastic and Kibana:
-
-* **Elastic**: https://www.elastic.co/es/downloads/elasticsearch
-* **Kibana**: https://www.elastic.co/es/downloads/kibana
-
-Unzip and launch it:
-
-* Launch Elastic on Elastic installation folder:
-```
-bin\elasticsearch
-```
-
-* Launch kibana on kibana installation folder:
-```
-bin\kibana
-```
-
 ## Development
+
+### Setup
+
+First of all, start the last services: Kafka Connect (to send messages from Kafka to Elastic), Elasticsearch (for storing the messages) and Kibana (for visualization and development):
+
+```
+docker-compose start kafka-connect elasticsearch kibana
+```
+
+Confirm that Kafka Connect is correctly running:
+
+* Go to Control Center (http://localhost:9021/)
+* Click on the cluster and select "Connect"
+* You should see the "Connect Clusters" with one named "connect"
+* If you click con "connect" you will see the connectors (none so far) and abbility to add a new one
+
+Confirm that Elasticserach is correctly running:
+
+* Go to the Elasticsearch API (http://localhost:9200/) and should show the cluster details
+* Go to Kibana (http://localhost:5601/) and confirm that it is running
+
+### Part 1: Create mappings (TBC)
 
 * Access to Kibana (http://localhost:5601)
 * Go to Dev Tools and execute the following query and Create mapping for latestUpdate field
@@ -41,54 +42,20 @@ PUT quotes
   }
 }
 ```
-* Evolve the code used on exercise 2 to persist processing output on elasticsearch. 
-* Replace kafka sink with Elastic Sink on Stock pipeline on `src/main/java/com/gft/upv/flink/StreaminStockJob.java`
-* Implement document storage using Elastic Sinkc connector `src/main/java/com/gft/upv/flink/proccess/ExtendedElasticSink.java` (Follow instructions on https://ci.apache.org/projects/flink/flink-docs-stable/dev/connectors/elasticsearch.html using Java Elastic Search 6.x example )
-* Launch `StreamingStokJob` on the IDE, (provide the topic parameter)
-* Access to Kibana (http://localhost:5601)
-* Go to Management --> Kibana --> Index Patterns.
-* Create quotes (quotes*) pattern.
-* Go to Dev Tools and execute the following query and you will get quotes indexed:
 
-```
-GET quotes/_search
-{
-  "size": 10
+### Part 2: Create the Elasticsearch Sink connector
 
-}
-```
+First of all, take a look at the connector configuration we will be using: `kafka-connect\elasticsearch-sink.json` and understand it.
 
-* Create a mapping for twitter index:
-```
-PUT tweets
-{
-  "mappings": {
-    "properties": {
-      "text": {
-        "type": "text",
-        "analyzer": "english",
-        "fielddata": true,
-        "fields": {
-          "keyword": {
-            "type": "keyword"
-          }
-        }
-      }
-    }
-  }
-}
-```
+Now, let's create the connector by clicking on "Upload connector config file" and uploading the configuration. This should configure the connector and start running it.
 
-* Launch `src/main/java/com/gft/upv/flink/TwitterStockJob.java` (pass twitter topic as argument)
-* Go to Management --> Kibana --> Index Patterns
-* Create twitter (tweets*) pattern
-* Go to Dev Tools and execute following query and you will get quotes indexed:
-```
-GET tweets/_search
-{
-  "size": 10
+Check that it is correctly running (not failing).
 
-}
-```
+### Part 3: Check the data in Elasticsearch
 
-In case you need help, you can check ElasticSink API here --> https://ci.apache.org/projects/flink/flink-docs-stable/dev/connectors/elasticsearch.html
+* Go to Kibana (http://localhost:5601)
+* Index Management
+
+# Reference
+
+* [Elasticserach Sink Connector](https://docs.confluent.io/kafka-connect-elasticsearch/current/index.html)
