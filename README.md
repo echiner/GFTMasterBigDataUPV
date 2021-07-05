@@ -2,20 +2,28 @@
 
 Welcome to the "**Big Data Architectures for Investment Banking**" exercise.
 
-In this exercise you will build a complete end to end Big Data Streaming Architecture.
+In this exercise you will build a complete end-to-end Big Data Streaming Architecture, processing & analyzing cryptocurrencies data in real-time.
+The below diagram provides a high level view of the architecture:
 
 ![Exercise architecture](img/architecture.png)
+
+In this other diagram we can see the architecture with some more detail:
+
+![Detailed architecture](img/architecture_detailed.png)
+
+By the end of the classes we should have the whole architecture up & running, then the trainee will have to find a new data source (ideally in real-time) and build its own flow.
 
 ## Course outline
 
 Follow the links below to access each exercise's details, code, etc.
 
-* [Exercise 0: Setup](exercise0_setup)
-* [Exercise 1: Data Ingestion](exercise1_data_ingestion)
-* [Exercise 2: Data Processing](exercise2_data_processing)
-* [Exercise 3: Data Storage](exercise3_data_storage)
-* [Exercise 4: Data Visualization](exercise4_data_visualization)
-* [Exercise 5: Machine Learning](exercise5_machine_learning)
+* [**Exercise 0**: Setup](exercise0_setup)
+* [**Exercise 1**: Data Ingestion](exercise1_data_ingestion)
+* [**Exercise 2**: Data Processing](exercise2_data_processing)
+* [**Exercise 3**: Data Storage](exercise3_data_storage)
+* [**Exercise 4**: Data Visualization](exercise4_data_visualization)
+* [**Exercise 5**: Machine Learning](exercise5_machine_learning)
+* [**Post work**: Build you own flow](post_work)
 
 ## Infrastructure reference
 

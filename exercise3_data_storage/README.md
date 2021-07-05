@@ -6,6 +6,14 @@ In this exercise you will store real-time messages on Elasticsearch:
 
 ## Development
 
+### Pre-requirements
+
+This exercise requires (at least) the following services to be up & running:
+
+* zookeeper
+* broker
+* control-center
+
 ### Setup
 
 First of all, start the last services: Kafka Connect (to send messages from Kafka to Elastic), Elasticsearch (for storing the messages) and Kibana (for visualization and development):
@@ -29,14 +37,15 @@ Confirm that Elasticserach is correctly running:
 ### Part 1: Create mappings (TBC)
 
 * Access to Kibana (http://localhost:5601)
-* Go to Dev Tools and execute the following query and Create mapping for latestUpdate field
+* Go to Dev Tools (under "Management") and execute the following query to create mapping for "price" field:
+
 ```
-PUT quotes
+PUT tickers
 {
   "mappings": {
     "properties": {
-      "latestUpdate": {
-        "type": "date" 
+      "price": {
+        "type": "float"
       }
     }
   }
@@ -53,9 +62,23 @@ Check that it is correctly running (not failing).
 
 ### Part 3: Check the data in Elasticsearch
 
+First check the data is being loaded and create the index pattern:
+
 * Go to Kibana (http://localhost:5601)
-* Index Management
+* Go to "Management" --> "Stack Management" --> "Data" --> "Index Management" and check that the index "tickers" has been created
+* If it hasn't been created, check that the Kafka Connector is working fine
+* If it has been created, create Index Pattern for Kibana
+  * Go to "Kibana" --> "Index Patterns" and click on "Create index pattern"
+  * Type "tickers*" and continue with the process
+
+Now, take a look at the data:
+
+* Go the the Home in Kibana
+* Go to "Analytics" --> "Discover"
+
+In this section you can check the data, filter and "play around" with it.
 
 # Reference
 
 * [Elasticserach Sink Connector](https://docs.confluent.io/kafka-connect-elasticsearch/current/index.html)
+* [Kibana Index Patterns](https://www.elastic.co/guide/en/kibana/current/index-patterns.html)

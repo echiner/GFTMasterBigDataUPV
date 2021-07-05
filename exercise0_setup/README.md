@@ -7,20 +7,7 @@ The whole architecture is based on [Docker containers](https://www.docker.com/) 
 * Docker Desktop
   * https://www.docker.com/products/docker-desktop
 
-If you want to learn more about the different components of the architecture, feel free to install them individually instead of using Docker. This will give you a better understanding of the components, how to run and configure them.
-This is also an option in case you have limited resources in your PC or problems running Docker.
-
-## Architecture software
-
-* Apache NiFi: https://nifi.apache.org/download.html
-* Apache Kafka stack: https://www.confluent.io/download/
-* Schema registry for windows: https://github.com/renukaradhya/confluentplatform/tree/master/bin/windows
-* Kafka tool & Avro plugin: http://www.kafkatool.com/ , https://github.com/laymain/kafka-tool-avro
-* Elastic: https://www.elastic.co/es/downloads/elasticsearch
-* Kibana: https://www.elastic.co/es/downloads/kibana
-* Jupyter: https://www.anaconda.com/distribution/
-
-**NOTE**: The architecture software will be installed when required in each of the exercises. There is no need to download or install them yet.
+If you want to learn more about the different components of the architecture, feel free to install them individually instead of using Docker. This will give you a better understanding of the components, how to run and configure them. This is also an option in case you have limited resources in your PC or problems running Docker.
 
 ## Infrastructure Setup
 
@@ -44,40 +31,39 @@ This will launch the following components, which will be used during the course:
 In order to **stop** the infrastructure:
 
 ```
-docker-compose stop -d
+docker-compose stop
 ```
 
 In order to **start** the infrastructure:
 
 ```
-docker-compose start -d
+docker-compose start
 ```
 
 ## Software requirements
 
 * IDE for Java development (your choice)
-  * https://www.eclipse.org/downloads/packages/ (**RECOMMENDED**)
-  * https://www.jetbrains.com/idea/download/ (Choose InteliJ Community)
-* Maven (for dependencies Management)
-  * https://maven.apache.org/download.cgi
-* GIT client (for code  management)
-  * https://git-scm.com/download/win
-* Java Virtual Machine
+ * https://www.jetbrains.com/idea/download/ (Choose InteliJ Community)  (**RECOMMENDED**)
+ * https://www.eclipse.org/downloads/packages/ 
+
+* Java Virtual Machine (choose JDK 8 or 11)
   * https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html
+
+* (Optional but recommended) GIT
+  * https://git-scm.com/downloads
 
 ## Development Environment Setup
 
 * Install IDE
-* Download and unzip Maven
 * Download the code with any of these two options:
 
-  1. Install GIT and clone the project
+  1. (if you have GIT installed) Clone the project
  
  ```
- git clone https://github.com/rlopezherrero/GFTMasterBigDataUPV
+ git clone https://github.com/echiner/GFTMasterBigDataUPV
  ```
 
-  2. Download the course exercise directly from the repository: https://github.com/rlopezherrero/GFTMasterBigDataUPV (click on "Clone or download")
+  2. Download the course exercise directly from the repository: https://github.com/echiner/GFTMasterBigDataUPV (click on "Clone or download")
 
 ## Admin & Troubleshooting
 
@@ -87,7 +73,7 @@ The easiest way to do many of these things is to use, either the Docker Desktop 
 2. Uncompress
 3. Run
 
-In any case, you can just do it using command line as explained in the following subsections.
+In any case, you can just do it using command line as explained in the following subsections, or use the Docker Dashboard.
 
 ### Starting and stopping things
 

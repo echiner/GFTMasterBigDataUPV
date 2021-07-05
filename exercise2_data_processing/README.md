@@ -6,6 +6,13 @@ In this exercise you will start reading and processing data in real-time using S
 
 ## Development
 
+### Pre-requirements
+
+This exercise requires (at least) the following services to be up & running:
+
+* zookeeper
+* broker
+
 ### Setup
 
 First of all, make sure the following services are up and running:
