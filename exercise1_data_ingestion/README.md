@@ -33,16 +33,37 @@ This will be explained during the class.
 
 In this part we will be getting data in real-time from Coinbase's websockets, and storing locally for testing purposes.
 
-Steps:
+First **load the template** with the Coinbase workflow:
 
 * Stop (or even remove) previous processors
 * Load template
-  * Upload Template `nifi/Coinbase.xml` 
-  * Add template
-  * Configure services (secrets)
-* Run
+  * Upload Template `nifi/Coinbase-basic.xml`
+    * Right click on canvas and "Upload template"
+  * Add template to the canvas
+    * Top menu --> Drag & Drop "Template" --> Select the uploaded template
 
-If you want to **check the results** (files saved), they will be available in the NiFi Docker container (if using Docker). Do the following to check it:
+Now we need to **configure the secrets** as shown in the image and explained below:
+
+![NiFi Service Secrets](../img/nifi-secrets.png)
+
+* Configure services (secrets)
+  * Right click on "ConnectWebsocket" processor --> "Configure"
+  * Click on the arrow on "JettyWebSocketClient"
+  * Configure the "StandardRestrictedSSLContextService" and add the secrects:
+    * Keystore Passwd: FSDWYWIBfOf0beegaOXYsHnF2JHiFFEDx0UxCA5EQqU
+    * Key Passwd: FSDWYWIBfOf0beegaOXYsHnF2JHiFFEDx0UxCA5EQqU
+    * Trustore Passwd: Ba9Cuw6qam8/CziLiXmUIkjuxYmf/UzLYlJemlqrxjQ
+  * Save and enable the services
+
+Now the workflow is configured and should look something like this (with no "warning sign"):
+
+![NiFi Flow Basic](../img/nifi-flow-basic.png)
+
+If everything is ok, **run it**:
+
+* Right-click on the canvas and "Start"
+
+Check the processors to confirm nothing is failing and, if you want to **check the results** (files saved), they will be available in the NiFi Docker container (if using Docker). Do the following to check it:
 
 ```
 docker ps
@@ -52,17 +73,21 @@ ls -l <folder_configured_in_PutFile_Processor>
 
 ### Part 3: Send to Kafka
 
-Start the Kafka services:
+Now, your turn. You will have to update the workflow so it sends the data to Kafka, instead of file system.
+
+First of all, **start the Kafka services**:
 
 ```
 docker-compose start zookeeper broker control-center
 ```
 
-Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics").
+Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages.
 
-Now change the NiFi workflow to send messages to Kafka instead of saving to file.
+Now change the NiFi workflow to send messages to Kafka instead of saving to file:
 
-**TIP**: Replace the **PutFile** processor for **PublishKafka_2_6**.
+* **TIP**: Replace the **PutFile** processor for **PublishKafka_2_6**.
+
+Once done and, if everything is working, go back to Control Center and check that the topic is created and the messages flowing.
 
 # Reference
 

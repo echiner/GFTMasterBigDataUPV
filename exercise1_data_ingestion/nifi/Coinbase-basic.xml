@@ -1,42 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.3">
     <description></description>
-    <groupId>5e404602-017a-1000-bf8c-2f0f578fe7b0</groupId>
-    <name>Coinbase-stream</name>
+    <groupId>8c2ee518-017a-1000-0be5-d2ab04d94fa0</groupId>
+    <name>Coinbase-basic</name>
     <snippet>
         <connections>
-            <id>093d6f37-33ba-31fe-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>3ba1a1b9-26b7-3717-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
             <destination>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>fe2c9fd4-8bb1-34c7-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </destination>
-            <flowFileExpiration>0 sec</flowFileExpiration>
-            <labelIndex>1</labelIndex>
-            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-            <name>Control Messages</name>
-            <selectedRelationships>unmatched</selectedRelationships>
-            <source>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>62932285-2100-32c1-0000-000000000000</id>
-                <type>PROCESSOR</type>
-            </source>
-            <zIndex>0</zIndex>
-        </connections>
-        <connections>
-            <id>48f87733-1ee2-3305-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
-            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-            <destination>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>495c73ec-d4c8-312b-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>bedd0c99-d4de-320a-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -48,20 +23,20 @@
             <name></name>
             <selectedRelationships>success</selectedRelationships>
             <source>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>ef2ac3cf-3cb5-3414-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>8cf39bf2-78f5-35f4-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <connections>
-            <id>62cd6048-b17d-3625-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>57658d7b-8fce-3cfd-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
             <destination>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>779aeeae-882e-3d8d-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>b8f6cc94-9226-3668-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -70,23 +45,23 @@
             <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
             <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
             <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-            <name>Tickers</name>
-            <selectedRelationships>ticker</selectedRelationships>
+            <name>Control Messages</name>
+            <selectedRelationships>unmatched</selectedRelationships>
             <source>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>62932285-2100-32c1-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>22d3be2a-bbec-3d79-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <connections>
-            <id>c88c9af1-6b2b-3464-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>cc44932d-18c1-3b7f-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
             <destination>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>62932285-2100-32c1-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>22d3be2a-bbec-3d79-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -98,20 +73,45 @@
             <name></name>
             <selectedRelationships>text message</selectedRelationships>
             <source>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>24f9f9cd-2ed3-3068-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>84a47a57-156f-3174-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <connections>
-            <id>ff2b1191-657d-33f9-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>cd8802c9-0a10-314c-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
             <destination>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>ef2ac3cf-3cb5-3414-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>8779624b-095c-3fb1-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>ticker</selectedRelationships>
+            <source>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>22d3be2a-bbec-3d79-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>f63ae14d-3f14-36cd-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>8cf39bf2-78f5-35f4-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </destination>
             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -123,110 +123,15 @@
             <name></name>
             <selectedRelationships>connected</selectedRelationships>
             <source>
-                <groupId>3a4da4b5-bbc1-3d3b-0000-000000000000</groupId>
-                <id>24f9f9cd-2ed3-3068-0000-000000000000</id>
+                <groupId>bf9de3e3-80ea-3752-0000-000000000000</groupId>
+                <id>84a47a57-156f-3174-0000-000000000000</id>
                 <type>PROCESSOR</type>
             </source>
             <zIndex>0</zIndex>
         </connections>
         <controllerServices>
-            <id>5715bfc9-b4a1-3ec5-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
-            <bundle>
-                <artifact>nifi-ssl-context-service-nar</artifact>
-                <group>org.apache.nifi</group>
-                <version>1.13.2</version>
-            </bundle>
-            <comments></comments>
-            <descriptors>
-                <entry>
-                    <key>Keystore Filename</key>
-                    <value>
-                        <name>Keystore Filename</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Keystore Password</key>
-                    <value>
-                        <name>Keystore Password</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>key-password</key>
-                    <value>
-                        <name>key-password</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Keystore Type</key>
-                    <value>
-                        <name>Keystore Type</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Truststore Filename</key>
-                    <value>
-                        <name>Truststore Filename</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Truststore Password</key>
-                    <value>
-                        <name>Truststore Password</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Truststore Type</key>
-                    <value>
-                        <name>Truststore Type</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>SSL Protocol</key>
-                    <value>
-                        <name>SSL Protocol</name>
-                    </value>
-                </entry>
-            </descriptors>
-            <name>StandardRestrictedSSLContextService</name>
-            <persistsState>false</persistsState>
-            <properties>
-                <entry>
-                    <key>Keystore Filename</key>
-                    <value>/tmp/nifi-config/keystore.jks</value>
-                </entry>
-                <entry>
-                    <key>Keystore Password</key>
-                </entry>
-                <entry>
-                    <key>key-password</key>
-                </entry>
-                <entry>
-                    <key>Keystore Type</key>
-                    <value>JKS</value>
-                </entry>
-                <entry>
-                    <key>Truststore Filename</key>
-                    <value>/tmp/nifi-config/truststore.jks</value>
-                </entry>
-                <entry>
-                    <key>Truststore Password</key>
-                </entry>
-                <entry>
-                    <key>Truststore Type</key>
-                    <value>JKS</value>
-                </entry>
-                <entry>
-                    <key>SSL Protocol</key>
-                    <value>TLS</value>
-                </entry>
-            </properties>
-            <state>ENABLED</state>
-            <type>org.apache.nifi.ssl.StandardRestrictedSSLContextService</type>
-        </controllerServices>
-        <controllerServices>
-            <id>b0d3da14-9ca1-3bf1-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>5b5858ec-d36b-3dd8-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <bundle>
                 <artifact>nifi-websocket-services-jetty-nar</artifact>
                 <group>org.apache.nifi</group>
@@ -329,7 +234,7 @@
                 </entry>
                 <entry>
                     <key>ssl-context-service</key>
-                    <value>5715bfc9-b4a1-3ec5-0000-000000000000</value>
+                    <value>cf0e7076-3c34-3d3a-0000-000000000000</value>
                 </entry>
                 <entry>
                     <key>connection-timeout</key>
@@ -356,161 +261,107 @@
                     <key>proxy-port</key>
                 </entry>
             </properties>
-            <state>ENABLED</state>
+            <state>DISABLED</state>
             <type>org.apache.nifi.websocket.jetty.JettyWebSocketClient</type>
         </controllerServices>
-        <processors>
-            <id>24f9f9cd-2ed3-3068-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
-            <position>
-                <x>264.0</x>
-                <y>0.0</y>
-            </position>
+        <controllerServices>
+            <id>cf0e7076-3c34-3d3a-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <bundle>
-                <artifact>nifi-websocket-processors-nar</artifact>
+                <artifact>nifi-ssl-context-service-nar</artifact>
                 <group>org.apache.nifi</group>
                 <version>1.13.2</version>
             </bundle>
-            <config>
-                <bulletinLevel>WARN</bulletinLevel>
-                <comments></comments>
-                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-                <descriptors>
-                    <entry>
-                        <key>websocket-client-controller-service</key>
-                        <value>
-                            <identifiesControllerService>org.apache.nifi.websocket.WebSocketClientService</identifiesControllerService>
-                            <name>websocket-client-controller-service</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>websocket-client-id</key>
-                        <value>
-                            <name>websocket-client-id</name>
-                        </value>
-                    </entry>
-                </descriptors>
-                <executionNode>ALL</executionNode>
-                <lossTolerant>false</lossTolerant>
-                <penaltyDuration>30 sec</penaltyDuration>
-                <properties>
-                    <entry>
-                        <key>websocket-client-controller-service</key>
-                        <value>b0d3da14-9ca1-3bf1-0000-000000000000</value>
-                    </entry>
-                    <entry>
-                        <key>websocket-client-id</key>
-                        <value>testId</value>
-                    </entry>
-                </properties>
-                <runDurationMillis>0</runDurationMillis>
-                <schedulingPeriod>0 sec</schedulingPeriod>
-                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                <yieldDuration>1 sec</yieldDuration>
-            </config>
-            <executionNodeRestricted>false</executionNodeRestricted>
-            <name>Connect to Coinbase WSS</name>
-            <relationships>
-                <autoTerminate>true</autoTerminate>
-                <name>binary message</name>
-            </relationships>
-            <relationships>
-                <autoTerminate>false</autoTerminate>
-                <name>connected</name>
-            </relationships>
-            <relationships>
-                <autoTerminate>false</autoTerminate>
-                <name>text message</name>
-            </relationships>
-            <state>STOPPED</state>
-            <style/>
-            <type>org.apache.nifi.processors.websocket.ConnectWebSocket</type>
-        </processors>
+            <comments></comments>
+            <descriptors>
+                <entry>
+                    <key>Keystore Filename</key>
+                    <value>
+                        <name>Keystore Filename</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Keystore Password</key>
+                    <value>
+                        <name>Keystore Password</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>key-password</key>
+                    <value>
+                        <name>key-password</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Keystore Type</key>
+                    <value>
+                        <name>Keystore Type</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Truststore Filename</key>
+                    <value>
+                        <name>Truststore Filename</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Truststore Password</key>
+                    <value>
+                        <name>Truststore Password</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>Truststore Type</key>
+                    <value>
+                        <name>Truststore Type</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>SSL Protocol</key>
+                    <value>
+                        <name>SSL Protocol</name>
+                    </value>
+                </entry>
+            </descriptors>
+            <name>StandardRestrictedSSLContextService</name>
+            <persistsState>false</persistsState>
+            <properties>
+                <entry>
+                    <key>Keystore Filename</key>
+                    <value>/tmp/nifi-config/keystore.jks</value>
+                </entry>
+                <entry>
+                    <key>Keystore Password</key>
+                </entry>
+                <entry>
+                    <key>key-password</key>
+                </entry>
+                <entry>
+                    <key>Keystore Type</key>
+                    <value>JKS</value>
+                </entry>
+                <entry>
+                    <key>Truststore Filename</key>
+                    <value>/tmp/nifi-config/truststore.jks</value>
+                </entry>
+                <entry>
+                    <key>Truststore Password</key>
+                </entry>
+                <entry>
+                    <key>Truststore Type</key>
+                    <value>JKS</value>
+                </entry>
+                <entry>
+                    <key>SSL Protocol</key>
+                    <value>TLS</value>
+                </entry>
+            </properties>
+            <state>DISABLED</state>
+            <type>org.apache.nifi.ssl.StandardRestrictedSSLContextService</type>
+        </controllerServices>
         <processors>
-            <id>495c73ec-d4c8-312b-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
-            <position>
-                <x>944.0</x>
-                <y>328.0</y>
-            </position>
-            <bundle>
-                <artifact>nifi-websocket-processors-nar</artifact>
-                <group>org.apache.nifi</group>
-                <version>1.13.2</version>
-            </bundle>
-            <config>
-                <bulletinLevel>WARN</bulletinLevel>
-                <comments></comments>
-                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-                <descriptors>
-                    <entry>
-                        <key>websocket-session-id</key>
-                        <value>
-                            <name>websocket-session-id</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>websocket-controller-service-id</key>
-                        <value>
-                            <name>websocket-controller-service-id</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>websocket-endpoint-id</key>
-                        <value>
-                            <name>websocket-endpoint-id</name>
-                        </value>
-                    </entry>
-                    <entry>
-                        <key>websocket-message-type</key>
-                        <value>
-                            <name>websocket-message-type</name>
-                        </value>
-                    </entry>
-                </descriptors>
-                <executionNode>ALL</executionNode>
-                <lossTolerant>false</lossTolerant>
-                <penaltyDuration>30 sec</penaltyDuration>
-                <properties>
-                    <entry>
-                        <key>websocket-session-id</key>
-                        <value>${websocket.session.id}</value>
-                    </entry>
-                    <entry>
-                        <key>websocket-controller-service-id</key>
-                        <value>${websocket.controller.service.id}</value>
-                    </entry>
-                    <entry>
-                        <key>websocket-endpoint-id</key>
-                        <value>${websocket.endpoint.id}</value>
-                    </entry>
-                    <entry>
-                        <key>websocket-message-type</key>
-                        <value>TEXT</value>
-                    </entry>
-                </properties>
-                <runDurationMillis>0</runDurationMillis>
-                <schedulingPeriod>0 sec</schedulingPeriod>
-                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                <yieldDuration>1 sec</yieldDuration>
-            </config>
-            <executionNodeRestricted>false</executionNodeRestricted>
-            <name>Send Suscription Message</name>
-            <relationships>
-                <autoTerminate>true</autoTerminate>
-                <name>failure</name>
-            </relationships>
-            <relationships>
-                <autoTerminate>true</autoTerminate>
-                <name>success</name>
-            </relationships>
-            <state>STOPPED</state>
-            <style/>
-            <type>org.apache.nifi.processors.websocket.PutWebSocket</type>
-        </processors>
-        <processors>
-            <id>62932285-2100-32c1-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>22d3be2a-bbec-3d79-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <position>
                 <x>264.0</x>
                 <y>240.0</y>
@@ -591,11 +442,78 @@
             <type>org.apache.nifi.processors.standard.RouteOnContent</type>
         </processors>
         <processors>
-            <id>779aeeae-882e-3d8d-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>84a47a57-156f-3174-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <position>
-                <x>512.0</x>
-                <y>496.0</y>
+                <x>264.0</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-websocket-processors-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.13.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>websocket-client-controller-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.websocket.WebSocketClientService</identifiesControllerService>
+                            <name>websocket-client-controller-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>websocket-client-id</key>
+                        <value>
+                            <name>websocket-client-id</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>websocket-client-controller-service</key>
+                        <value>5b5858ec-d36b-3dd8-0000-000000000000</value>
+                    </entry>
+                    <entry>
+                        <key>websocket-client-id</key>
+                        <value>testId</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Connect to Coinbase WSS</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>binary message</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>connected</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>text message</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.websocket.ConnectWebSocket</type>
+        </processors>
+        <processors>
+            <id>8779624b-095c-3fb1-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
+            <position>
+                <x>520.0</x>
+                <y>511.0</y>
             </position>
             <bundle>
                 <artifact>nifi-standard-nar</artifact>
@@ -708,8 +626,8 @@
             <type>org.apache.nifi.processors.standard.PutFile</type>
         </processors>
         <processors>
-            <id>ef2ac3cf-3cb5-3414-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>8cf39bf2-78f5-35f4-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <position>
                 <x>944.0</x>
                 <y>0.0</y>
@@ -777,15 +695,15 @@
                     </entry>
                     <entry>
                         <key>Replacement Value</key>
-                        <value>{
-  "type": "subscribe",
-  "product_ids": [
-    "ETH-EUR"
-  ],
-  "channels": [
-    "ticker"
-  ]
-}</value>
+                        <value>   {
+    "type": "subscribe",
+    "product_ids": [
+      "ETH-EUR"
+    ],
+    "channels": [
+      "ticker"
+    ]
+  }</value>
                     </entry>
                     <entry>
                         <key>Character Set</key>
@@ -828,8 +746,8 @@
             <type>org.apache.nifi.processors.standard.ReplaceText</type>
         </processors>
         <processors>
-            <id>fe2c9fd4-8bb1-34c7-0000-000000000000</id>
-            <parentGroupId>3a4da4b5-bbc1-3d3b-0000-000000000000</parentGroupId>
+            <id>b8f6cc94-9226-3668-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
             <position>
                 <x>0.0</x>
                 <y>496.0</y>
@@ -944,6 +862,88 @@
             <style/>
             <type>org.apache.nifi.processors.standard.PutFile</type>
         </processors>
+        <processors>
+            <id>bedd0c99-d4de-320a-0000-000000000000</id>
+            <parentGroupId>bf9de3e3-80ea-3752-0000-000000000000</parentGroupId>
+            <position>
+                <x>944.0</x>
+                <y>328.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-websocket-processors-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.13.2</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>websocket-session-id</key>
+                        <value>
+                            <name>websocket-session-id</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>websocket-controller-service-id</key>
+                        <value>
+                            <name>websocket-controller-service-id</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>websocket-endpoint-id</key>
+                        <value>
+                            <name>websocket-endpoint-id</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>websocket-message-type</key>
+                        <value>
+                            <name>websocket-message-type</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>websocket-session-id</key>
+                        <value>${websocket.session.id}</value>
+                    </entry>
+                    <entry>
+                        <key>websocket-controller-service-id</key>
+                        <value>${websocket.controller.service.id}</value>
+                    </entry>
+                    <entry>
+                        <key>websocket-endpoint-id</key>
+                        <value>${websocket.endpoint.id}</value>
+                    </entry>
+                    <entry>
+                        <key>websocket-message-type</key>
+                        <value>TEXT</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Send Suscription Message</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.websocket.PutWebSocket</type>
+        </processors>
     </snippet>
-    <timestamp>06/30/2021 19:04:50 UTC</timestamp>
+    <timestamp>07/09/2021 16:54:12 UTC</timestamp>
 </template>

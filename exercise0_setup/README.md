@@ -2,12 +2,13 @@
 
 In this exercise you will understand the software requirements, and how to do an initial setup.
 
-The whole architecture is based on [Docker containers](https://www.docker.com/) in order to make it easier and quicker to setup. So there is no need to install each one of the components. So, to start with, make sure you have Docker installed in your PC.
+The whole architecture is based on [Docker containers](https://www.docker.com/) in order to make it easier and quicker to setup. So there is no need to install each one of the components.
 
-* Docker Desktop
-  * https://www.docker.com/products/docker-desktop
+So, to start with, make sure you have **Docker** installed in your PC.
 
-If you want to learn more about the different components of the architecture, feel free to install them individually instead of using Docker. This will give you a better understanding of the components, how to run and configure them. This is also an option in case you have limited resources in your PC or problems running Docker.
+* Docker Desktop: https://www.docker.com/products/docker-desktop
+
+**OPTIONAL**: If you want to learn more about the different components of the architecture, feel free to install them individually instead of using Docker. This will give you a better understanding of the components, how to run and configure them. This is also an option in case you have limited resources in your PC or problems running Docker.
 
 ## Infrastructure Setup
 
@@ -22,25 +23,37 @@ This will launch the following components, which will be used during the course:
 | Component | Service | Description | URL/port |
 | ------------- | ------------- | ------------- | ------------- |
 | **Apache NiFi**  | nifi | Data Ingestion Tool  | http://localhost:8090/nifi  |
+| **Zookeeper**  | zookeeper | Software for distributed coordination  | N/A  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
+| **Kafka Connect**  | kafka-connect | Kafka Connect node  | N/A  |
 | **Confluent Control Center**  | control-center | Kafka Manager & Monitor  |  http://localhost:9021  |
 | **Elasticsearch**  | elasticsearch | Data storage and search engine  | http://localhost:9200  |
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |
 | **Jupyter**  | jupyter | Notebooks analytics  | http://localhost:8888  |
 
-In order to **stop** the infrastructure:
+You can check everything is running by checking the Docker dashboard or by clicking on the URLs above.
+
+Once checked, and given that we won't need everything from the beginning, feel free to **stop all services** for the time being to reduce resource usage:
 
 ```
 docker-compose stop
 ```
 
-In order to **start** the infrastructure:
+If you wanted to start the whole infrastructure again (don't need to do it now) you can run the following:
 
 ```
 docker-compose start
 ```
 
+or, whenever you need so stat a specifi service:
+
+```
+docker-compose start <service>
+```
+
 ## Software requirements
+
+You will also need **Java** and an **IDE** installed:
 
 * IDE for Java development (your choice)
  * https://www.jetbrains.com/idea/download/ (Choose InteliJ Community)  (**RECOMMENDED**)
@@ -65,7 +78,7 @@ docker-compose start
 
   2. Download the course exercise directly from the repository: https://github.com/echiner/GFTMasterBigDataUPV (click on "Clone or download")
 
-## Admin & Troubleshooting
+# Admin & Troubleshooting
 
 The easiest way to do many of these things is to use, either the Docker Desktop Dashboard or a tool such as **[Lazydocker](https://github.com/jesseduffield/lazydocker)**:
 

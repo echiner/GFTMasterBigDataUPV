@@ -13,16 +13,12 @@ This exercise requires (at least) the following services to be up & running:
 * zookeeper
 * broker
 
+And the following are optional:
+
+* nifi (if you want to test end to end)
+* control-center (if you want to see the topic messages)
+
 ### Setup
-
-First of all, make sure the following services are up and running:
-
-* nifi
-* zookeeper
-* broker
-* control-center
-
-If they are not running, check the previous exercises to understand how to run them.
 
 Start your IDE (ideally IntelliJ) and import the code under `spark`.
 
@@ -30,7 +26,7 @@ Start your IDE (ideally IntelliJ) and import the code under `spark`.
 
 The code should be ready to run, as it is. So just run the main class (`com.gft.upv.spark.TickerProcessor`).
 
-The code is doing the following:
+The code is doing the following (will be explained in detail in the class):
 
 * Connect to Kafka and retrieve messages (it will start from the beginning of the topic)
 * Convert the incoming JSON into a Dataframe
@@ -43,12 +39,14 @@ Now, understand the code and feel free to play around with it (specially with th
 
 Now that we have tested that we are processing data in real-time coming from Kafka and decided the logic (SQL query), let's send the data back to another Kafka topic. For doing so, comment the "streaming to console" part and uncomment the "sending to kafka" part.
 
-If the code is working fine, all the newly generated data will be sent to a new topic (**tickers_transformed**). You should be able to see the messages in Control Center (under the "Topcis" section).
+If the code is working fine, all the newly generated data will be sent to a new topic (**tickers_transformed**). You should be able to see the messages in Control Center (under the "Topics" section).
 
 ## Troubleshooting
 
-https://sparkbyexamples.com/spark/spark-hadoop-exception-in-thread-main-java-lang-unsatisfiedlinkerror-org-apache-hadoop-io-nativeio-nativeiowindows-access0ljava-lang-stringiz/
-https://github.com/cdarlint/winutils
+If you are running Spark on Windows it might fail since it does not have the Hadoop libraries. The following articles explain how to solve this issue:
+
+* https://sparkbyexamples.com/spark/spark-hadoop-exception-in-thread-main-java-lang-unsatisfiedlinkerror-org-apache-hadoop-io-nativeio-nativeiowindows-access0ljava-lang-stringiz/
+* https://github.com/cdarlint/winutils
 
 # Reference
 

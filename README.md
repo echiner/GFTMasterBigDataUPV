@@ -3,11 +3,11 @@
 Welcome to the "**Big Data Architectures for Investment Banking**" exercise.
 
 In this exercise you will build a complete end-to-end Big Data Streaming Architecture, processing & analyzing cryptocurrencies data in real-time.
-The below diagram provides a high level view of the architecture:
+The below diagram provides a **high level view of the architecture**:
 
 ![Exercise architecture](img/architecture.png)
 
-In this other diagram we can see the architecture with some more detail:
+In this other diagram we can see the architecture with some **more detail**:
 
 ![Detailed architecture](img/architecture_detailed.png)
 
