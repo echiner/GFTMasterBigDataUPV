@@ -24,7 +24,7 @@ Start your IDE (ideally IntelliJ) and import the code under `spark`.
 
 ### Part 1: Read data from Kafka, process and show in console
 
-The code should be ready to run, as it is. So just run the main class (`com.gft.upv.spark.TickerProcessor`).
+The code should be ready to run, as it is. So just **run the main class** (`com.gft.upv.spark.TickerProcessor`).
 
 The code is doing the following (will be explained in detail in the class):
 
@@ -33,13 +33,13 @@ The code is doing the following (will be explained in detail in the class):
 * Create a SQL on that dataframe
 * Show the results in the console
 
-Now, understand the code and feel free to play around with it (specially with the SQL query). The SQL query is the logic we will be applying to the stream.
+Now, **understand the code** and feel free to **play around with it** (specially with the SQL query). The SQL query is the logic we will be applying to the stream.
 
 ### Part 2: Send transformed data back to Kafka
 
-Now that we have tested that we are processing data in real-time coming from Kafka and decided the logic (SQL query), let's send the data back to another Kafka topic. For doing so, comment the "streaming to console" part and uncomment the "sending to kafka" part.
+Now that we have tested that we are processing data in real-time coming from Kafka and decided the logic (SQL query), let's **send the data back to another Kafka topic**. For doing so, comment the "streaming to console" part and uncomment the "sending to kafka" part.
 
-If the code is working fine, all the newly generated data will be sent to a new topic (**tickers_transformed**). You should be able to see the messages in Control Center (under the "Topics" section).
+If the code is working fine, all the newly generated data will be sent to a new topic (`tickers_transformed`). You should be able to see the messages in Control Center (under the "Topics" section).
 
 ## Troubleshooting
 

@@ -31,7 +31,7 @@ This will launch the following components, which will be used during the course:
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |
 | **Jupyter**  | jupyter | Notebooks analytics  | http://localhost:8888  |
 
-You can check everything is running by checking the Docker dashboard or by clicking on the URLs above.
+You can **check everything is running** by checking the Docker dashboard or by clicking on the URLs above.
 
 Once checked, and given that we won't need everything from the beginning, feel free to **stop all services** for the time being to reduce resource usage:
 
@@ -70,13 +70,13 @@ You will also need **Java** and an **IDE** installed:
 * Install IDE
 * Download the code with any of these two options:
 
-  1. (if you have GIT installed) Clone the project
+Clone the project (if you have GIT installed):
  
  ```
  git clone https://github.com/echiner/GFTMasterBigDataUPV
  ```
 
-  2. Download the course exercise directly from the repository: https://github.com/echiner/GFTMasterBigDataUPV (click on "Clone or download")
+Or, download the course exercise directly from the repository: https://github.com/echiner/GFTMasterBigDataUPV (click on "Clone or download")
 
 # Admin & Troubleshooting
 
@@ -86,7 +86,7 @@ The easiest way to do many of these things is to use, either the Docker Desktop 
 2. Uncompress
 3. Run
 
-In any case, you can just do it using command line as explained in the following subsections, or use the Docker Dashboard.
+In any case, you can just do it using command line as explained in the following subsections, or use the **Docker Dashboard**.
 
 ### Starting and stopping things
 
