@@ -92,3 +92,4 @@ Once done and, if everything is working, go back to Control Center and check tha
 # Reference
 
 * [Apache NiFi documentation](https://nifi.apache.org/docs.html)
+* [Coinbase API](https://docs.pro.coinbase.com/)
