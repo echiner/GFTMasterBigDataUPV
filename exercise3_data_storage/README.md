@@ -16,7 +16,7 @@ This exercise requires (at least) the following services to be up & running:
 
 ### Setup
 
-First of all, start the last services: Kafka Connect (to send messages from Kafka to Elastic), Elasticsearch (for storing the messages) and Kibana (for visualization and development):
+First of all, start the last services: **Kafka Connect** (to send messages from Kafka to Elastic), **Elasticsearch** (for storing the messages) and **Kibana** (for visualization and development):
 
 ```
 docker-compose start kafka-connect elasticsearch kibana
@@ -29,30 +29,12 @@ Confirm that Kafka Connect is correctly running:
 * You should see the "Connect Clusters" with one named "connect"
 * If you click con "connect" you will see the connectors (none so far) and abbility to add a new one
 
-Confirm that Elasticserach is correctly running:
+Confirm that Elasticsearch is correctly running:
 
 * Go to the Elasticsearch API (http://localhost:9200/) and should show the cluster details
 * Go to Kibana (http://localhost:5601/) and confirm that it is running
 
-### Part 1: Create mappings (TBC)
-
-* Access to Kibana (http://localhost:5601)
-* Go to Dev Tools (under "Management") and execute the following query to create mapping for "price" field:
-
-```
-PUT tickers
-{
-  "mappings": {
-    "properties": {
-      "price": {
-        "type": "float"
-      }
-    }
-  }
-}
-```
-
-### Part 2: Create the Elasticsearch Sink connector
+### Part 1: Create the Elasticsearch Sink connector
 
 First of all, take a look at the connector configuration we will be using: `kafka-connect\elasticsearch-sink.json` and understand it.
 
@@ -60,7 +42,7 @@ Now, let's create the connector by clicking on "Upload connector config file" an
 
 Check that it is correctly running (not failing).
 
-### Part 3: Check the data in Elasticsearch
+### Part 2: Check the data in Elasticsearch
 
 First check the data is being loaded and create the index pattern:
 
@@ -73,7 +55,7 @@ First check the data is being loaded and create the index pattern:
 
 Now, take a look at the data:
 
-* Go the the Home in Kibana
+* Go to Home in Kibana
 * Go to "Analytics" --> "Discover"
 
 In this section you can check the data, filter and "play around" with it.

@@ -47,7 +47,7 @@ Now we need to **configure the secrets** as shown in the image and explained bel
 ![NiFi Service Secrets](../img/nifi-secrets.png)
 
 * Configure services (secrets)
-  * Right click on "ConnectWebsocket" processor --> "Configure"
+  * Right click on "ConnectWebsocket" processor --> "Configure" --> "Properties"
   * Click on the arrow on "JettyWebSocketClient"
   * Configure the "StandardRestrictedSSLContextService" and add the secrects:
     * Keystore Passwd: FSDWYWIBfOf0beegaOXYsHnF2JHiFFEDx0UxCA5EQqU

@@ -17,10 +17,10 @@ This exercise requires (at least) the following services to be up & running:
 
 * Enter Kibana: http://localhost:5601
 * Go to "Analytics" --> "Dashboard" and click on "Create dashboard"
-* Create the following dashboards, but clicking on "Create visualization"
-  * Price evolution over time: Using a line graph
-  * Total number of messages: Using a metric graph
-  * Distribution of messages by product: Using a pie chart
+* Create the following visualizations by clicking on "Create visualization"
+  * **Price evolution over time**: Using a line graph
+  * **Total number of messages**: Using a metric graph
+  * **Distribution of messages by product**: Using a pie chart
 
 The visualizations should look something like this:
 

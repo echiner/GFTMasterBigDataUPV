@@ -23,16 +23,16 @@ docker-compose start jupyter
 * Open Jupyter: http://localhost:8888
 * You need the token to start, and this can be retrieved in two different ways:  
   * Connecting to the node:
-    * Run on command line --> docker exec docker_jupyter_1 -it bash
-    * On docker container get token --> jupyter notebook list
+    * Run on command line: `docker exec docker_jupyter_1 -it bash`
+    * On docker container get token: `jupyter notebook list`
     * Copy the token 
   * Just look at the container logs (using lazydocker, Visual Studio Code or Docker Dashboard)
 * Now that you have the token, just use it in the login screen
 
 ### Part 1: Load and test the datasets
 
-* Load notebook. This is done by clicking on "Upload" and load the `MLExercise.ipynb`.
-* Follow the instructions there. 
+* Load notebook. This is done by clicking on "Upload" and load the `MLExercise.ipynb`
+* Follow the instructions there
 
 ### Part 2: Play around
 
@@ -43,4 +43,4 @@ Now that you can access the data and it is included in the dataframe, feel free 
 * [Jupyter Documentation](https://jupyter.org/documentation)
 * [Python Documentation](https://docs.python.org/3/)
 * [Pandas Documentation](https://pandas.pydata.org/docs/)
-* [scikit-lear Documentation](https://scikit-learn.org/stable/user_guide.html)
+* [scikit-learn Documentation](https://scikit-learn.org/stable/user_guide.html)
