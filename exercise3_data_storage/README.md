@@ -47,7 +47,7 @@ Check that it is correctly running (not failing).
 First check the data is being loaded and create the index pattern:
 
 * Go to Kibana (http://localhost:5601)
-* Go to "Management" --> "Stack Management" --> "Data" --> "Index Management" and check that the index "tickers" has been created
+* Go to "Management" --> "Stack Management" --> "Data" --> "Index Management" and check that the index "tickers_transformed" has been created
 * If it hasn't been created, check that the Kafka Connector is working fine
 * If it has been created, create Index Pattern for Kibana
   * Go to "Kibana" --> "Index Patterns" and click on "Create index pattern"
