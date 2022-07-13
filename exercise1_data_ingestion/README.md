@@ -53,7 +53,7 @@ Now we need to **configure the secrets** as shown in the image and explained bel
     * Keystore Passwd: FSDWYWIBfOf0beegaOXYsHnF2JHiFFEDx0UxCA5EQqU
     * Key Passwd: FSDWYWIBfOf0beegaOXYsHnF2JHiFFEDx0UxCA5EQqU
     * Trustore Passwd: Ba9Cuw6qam8/CziLiXmUIkjuxYmf/UzLYlJemlqrxjQ
-  * Save and enable the services
+  * Save and enable the services (lightning bolt icon)
 
 Now the workflow is configured and should look something like this (with no "warning sign"):
 
@@ -93,3 +93,9 @@ Once done and, if everything is working, go back to Control Center and check tha
 
 * [Apache NiFi documentation](https://nifi.apache.org/docs.html)
 * [Coinbase API](https://docs.pro.coinbase.com/)
+
+# Troubleshooting
+
+## Certificate expired
+
+* [Fixing the certificate expiration issue](troubleshooting)
