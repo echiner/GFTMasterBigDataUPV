@@ -45,7 +45,7 @@ If you wanted to start the whole infrastructure again (don't need to do it now) 
 docker-compose start
 ```
 
-or, whenever you need so stat a specifi service:
+or, whenever you need so stat a specific service:
 
 ```
 docker-compose start <service>
