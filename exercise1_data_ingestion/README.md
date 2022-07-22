@@ -81,11 +81,15 @@ First of all, **start the Kafka services**:
 docker-compose start zookeeper broker control-center
 ```
 
-Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages.
+Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages created by us (just technical and/or internal Kafka topics).
 
 Now change the NiFi workflow to send messages to Kafka instead of saving to file:
 
-* **TIP**: Replace the **PutFile** processor for **PublishKafka_2_6**.
+* **TIPS**:
+  * Replace the **PutFile** processor for **PublishKafka_2_6**
+  * **Hostname**: broker:29092 (as seen in the Kafka Docker Compose config in KAFKA_ADVERTISED_LISTENERS)
+  * Use the "**tickers**" topic name (if you use a different one, make sure you are consistent throught the exercises)
+  * Do not use transactions and set the delivery guarantee to "Best effort", in order to improve performance
 
 Once done and, if everything is working, go back to Control Center and check that the topic is created and the messages flowing.
 
