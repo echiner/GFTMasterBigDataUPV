@@ -60,6 +60,51 @@ Now, take a look at the data:
 
 In this section you can check the data, filter and "play around" with it.
 
+## Troubleshooting
+
+### Unable to start Control Center
+
+There might be several reasons why you are not able to connect to Control Center (e.g. not enough resources or configuration issues), so we will have to upload the Connect configuration via REST API directly. Let's see how it is done.
+
+Although you can do this manually, the best approach will be to use a REST API tool like [Postman|https://www.postman.com/] (or any other). So let's download and install it.
+
+First of all, test that Kafka Connect is running and there are no connectors running by setting the following:
+
+```
+GET http://localhost:8083/connectors
+````
+
+This should return an empty array: "[]"
+
+Now, let's add the new connector with the following setup:
+
+```
+POST http://localhost:8083/connectors/
+```
+
+With the following body (mark as "Raw" and set "JSON" format):
+
+```
+{
+    "name": "elastic-sink-connector",
+    "config": {
+        "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+        "connection.url": "http://elasticsearch:9200",
+        "tasks.max": "1",
+        "topics": "tickers_transformed",
+        "name": "elastic-sink-connector",
+        "auto.create.indices.at.start": "true",
+        "type.name": "ticker",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "schema.ignore": "true",
+        "key.ignore": "true"
+    }
+}
+```
+
+This should return a success response and you can now check again the connectors to confirm it was created.
+
 # Reference
 
 * [Elasticserach Sink Connector](https://docs.confluent.io/kafka-connect-elasticsearch/current/index.html)

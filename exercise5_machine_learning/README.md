@@ -21,12 +21,12 @@ docker-compose start jupyter
 ```
 
 * Open Jupyter: http://localhost:8888
-* You need the token to start, and this can be retrieved in two different ways:  
+* You **need the token to start**, and this can be retrieved in two different ways:  
+  * Look at the jupyter container logs (using lazydocker, Visual Studio Code or Docker Dashboard)
   * Connecting to the node:
     * Run on command line: `docker exec -it docker_jupyter_1 bash`
     * On docker container get token: `jupyter notebook list`
     * Copy the token 
-  * Just look at the container logs (using lazydocker, Visual Studio Code or Docker Dashboard)
 * Now that you have the token, just use it in the login screen
 
 ### Part 1: Load and test the datasets
