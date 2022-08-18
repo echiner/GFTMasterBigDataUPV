@@ -66,7 +66,7 @@ In this section you can check the data, filter and "play around" with it.
 
 There might be several reasons why you are not able to connect to Control Center (e.g. not enough resources or configuration issues), so we will have to upload the Connect configuration via REST API directly. Let's see how it is done.
 
-Although you can do this manually, the best approach will be to use a REST API tool like [Postman|https://www.postman.com/] (or any other). So let's download and install it.
+Although you can do this manually, the best approach will be to use a REST API tool like [Postman](https://www.postman.com/) (or any other). So let's download and install it.
 
 First of all, test that Kafka Connect is running and there are no connectors running by setting the following:
 
@@ -104,6 +104,8 @@ With the following body (mark as "Raw" and set "JSON" format):
 ```
 
 This should return a success response and you can now check again the connectors to confirm it was created.
+
+To make things simpler, you can just import the Postman Collection (`exercise3_data_storage\postman-collection\UPV.postman_collection.json`).
 
 # Reference
 

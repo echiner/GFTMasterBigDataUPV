@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "bea41345-bee5-49b7-9a30-9a2d131aee51",
+		"name": "UPV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add connector",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"elastic-sink-connector\",\r\n    \"config\": {\r\n        \"connector.class\": \"io.confluent.connect.elasticsearch.ElasticsearchSinkConnector\",\r\n        \"connection.url\": \"http://elasticsearch:9200\",\r\n        \"tasks.max\": \"1\",\r\n        \"topics\": \"tickers_transformed\",\r\n        \"name\": \"elastic-sink-connector\",\r\n        \"auto.create.indices.at.start\": \"true\",\r\n        \"type.name\": \"ticker\",\r\n        \"value.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n        \"value.converter.schemas.enable\": \"false\",\r\n        \"schema.ignore\": \"true\",\r\n        \"key.ignore\": \"true\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get connectors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
