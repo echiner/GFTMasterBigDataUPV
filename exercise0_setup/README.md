@@ -18,11 +18,17 @@ In order to **launch** the required infrastructure you just have to go to the "d
 docker-compose up -d
 ```
 
-This will launch the following components, which will be used during the course:
+**IMPORTANT**: Our recommendation is that you start one by one as required. So, for example now start only with Apache NiFi and check that is is runnig (see URL below):
+
+```
+docker-compose up nifi-upv -d
+```
+
+This is the summary of the components which will be launched throughout the course:
 
 | Component | Service | Description | URL/port |
 | ------------- | ------------- | ------------- | ------------- |
-| **Apache NiFi**  | nifi | Data Ingestion Tool  | http://localhost:8090/nifi  |
+| **Apache NiFi**  | nifi-upv | Data Ingestion Tool  | https://localhost:8443/nifi  |
 | **Zookeeper**  | zookeeper | Software for distributed coordination  | N/A  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
 | **Kafka Connect**  | kafka-connect | Kafka Connect node  | N/A  |

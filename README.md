@@ -29,7 +29,7 @@ Follow the links below to access each exercise's details, code, etc.
 
 | Component | Service | Description | URL/port |
 | ------------- | ------------- | ------------- | ------------- |
-| **Apache NiFi**  | nifi | Data Ingestion Tool  | http://localhost:8090/nifi  |
+| **Apache NiFi**  | nifi-upv | Data Ingestion Tool  | https://localhost:8443/nifi  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
 | **Confluent Control Center**  | control-center | Kafka Manager & Monitor  |  http://localhost:9021  |
 | **Spark UI** | N/A | Spark UI (jobs, environment, etc.) | http://localhost:4040 |
