@@ -90,7 +90,13 @@ Now, your turn. You will have to update the workflow so it sends the data to Kaf
 First of all, **start the Kafka services**:
 
 ```
-docker-compose start zookeeper broker control-center
+docker compose start zookeeper broker control-center
+```
+
+If the components were not launched before, do so now with "docker compose up":
+
+```
+docker compose up zookeeper broker control-center -d
 ```
 
 Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages created by us (just technical and/or internal Kafka topics).
