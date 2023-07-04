@@ -22,8 +22,20 @@ Start the NiFi service:
 docker-compose start nifi
 ```
 
-Once it is running, go to http://localhost:8090/nifi
+Once it is running, go to https://localhost:8443/nifi/
 
+**NOTE**: You will find the user and password in the docker logs:
+
+```
+Generated Username [USERNAME]
+Generated Password [PASSWORD]
+```
+
+You can check the logs either in the Docker desktop console or using the docker logs command:
+
+```
+docker logs nifi | grep Generated
+```
 
 ### Part 1: Basic NiFi workflow
 

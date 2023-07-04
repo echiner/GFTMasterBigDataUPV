@@ -12,7 +12,7 @@ So, to start with, make sure you have **Docker** installed in your PC.
 
 ## Infrastructure Setup
 
-In order to **launch** the required infrastructure you just have to go to the "docker" folder and run the following:
+In order to **launch** the required infrastructure you just have to go to the "docker-upv" folder and run the following command:
 
 ```
 docker-compose up -d

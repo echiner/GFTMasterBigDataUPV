@@ -15,6 +15,12 @@ In order to fix this we need to do the following:
 keytool -keystore truststore.jks -alias coinbase -import -file coinbase.cer
 ```
 
+Example using Windows:
+
+```
+C:\"Program Files"\Java\jdk-20\bin\keytool --keystore .\truststore.jks -alias coinbase2023 -import -file .\pro.coinbase.der
+```
+
 (if the alias already exists, feel free to change it since it does not affect the execution itself)
 
 * Restart NiFi
