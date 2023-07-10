@@ -32,6 +32,12 @@ You can do this in two different ways:
 * Browse to TickerProcessor, right click on it and select "Run 'TickerProcessor.main()'"
 * On the top-right hand side, make sure that "Ticker Processor" is selected and click on the "Play button"
 
+In the console you should start seeing the progress, like the following:
+
+![Spark Execution 1](../img/spark_streaming_execution1.png)
+
+![Spark Execution 2](../img/spark_streaming_execution2.png)
+
 The code is doing the following (will be explained in detail in the class):
 
 * Connect to Kafka and retrieve messages (it will start from the beginning of the topic, i.e. from offset 0)
@@ -47,6 +53,8 @@ Now that we have tested that we are processing data in real-time coming from Kaf
 
 If the code is working fine, all the newly generated data will be sent to a new topic (`tickers_transformed`). You should be able to see the messages in Control Center (under the "Topics" section).
 
+![Kafka Message](../img/spark_streaming_execution3.png)
+
 ## Troubleshooting
 
 ### Failure running in Windows
@@ -60,6 +68,7 @@ In summary:
 
 * Download winutils (we use **hadoop-2.7.4**)
 * Add the location to HADOOP_HOME (either in the IntelliJ environment variables or your PC's environment variables)
+  * IntelliJ: Right click on ```TickerProcessor``` --> "Modify Run Configuration" --> Add HADOOP_HOME and the location to "Environment variables"
 * Add `%HADOOP_HOME%/bin` to the PATH envoriment variable
 
 To confirm the setup was correct, the "TickerProcessor" will log both HADOOP_HOME and PATH so you can check it is correct.

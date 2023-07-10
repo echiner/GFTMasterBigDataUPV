@@ -26,7 +26,7 @@ C:\"Program Files"\Java\jdk-20\bin\keytool --keystore .\truststore.jks -alias co
 * Restart NiFi
 
 ```
-docker-compose restart nifi
+docker compose restart nifi
 ```
 
 ## Bonus: Start from scratch
