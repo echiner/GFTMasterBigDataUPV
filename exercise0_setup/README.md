@@ -12,16 +12,16 @@ So, to start with, make sure you have **Docker** installed in your PC.
 
 ## Infrastructure Setup
 
-In order to **launch** the required infrastructure you just have to go to the "docker-upv" folder and run the following command:
+In order to **launch** the required infrastructure you just have to go to the ```docker-upv``` folder and run the following command:
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 **IMPORTANT**: Our recommendation is that you start one by one as required. So, for example now start only with Apache NiFi and check that is is runnig (see URL below):
 
 ```
-docker-compose up nifi-upv -d
+docker compose up nifi-upv -d
 ```
 
 This is the summary of the components which will be launched throughout the course:
@@ -42,19 +42,19 @@ You can **check everything is running** by checking the Docker dashboard or by c
 Once checked, and given that we won't need everything from the beginning, feel free to **stop all services** for the time being to reduce resource usage:
 
 ```
-docker-compose stop
+docker compose stop
 ```
 
 If you wanted to start the whole infrastructure again (don't need to do it now) you can run the following:
 
 ```
-docker-compose start
+docker compose start
 ```
 
 or, whenever you need to start a specific service:
 
 ```
-docker-compose start <service>
+docker compose start <service>
 ```
 
 ## Software requirements
@@ -99,7 +99,7 @@ In any case, you can just do it using command line as explained in the following
 In order to stop/start single service, use the following commands:
 
 ```
-docker-compose start <Service>
+docker compose start <Service>
 ```
 
 Where the **<Service>** is listed in the table above ("Component list" section).
@@ -121,5 +121,5 @@ docker logs <CONTAINER ID or NAME>
 ### Teardown (destroy everything)
 
 ```
-docker-compose down -d
+docker compose down -d
 ```

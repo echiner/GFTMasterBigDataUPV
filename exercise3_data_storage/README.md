@@ -19,7 +19,7 @@ This exercise requires (at least) the following services to be up & running:
 First of all, start the last services: **Kafka Connect** (to send messages from Kafka to Elastic), **Elasticsearch** (for storing the messages) and **Kibana** (for visualization and development):
 
 ```
-docker-compose start kafka-connect elasticsearch kibana
+docker compose start kafka-connect elasticsearch kibana
 ```
 
 Confirm that Kafka Connect is correctly running:

@@ -19,7 +19,7 @@ For a reference of the API follow the below link:
 Start the NiFi service:
 
 ```
-docker-compose start nifi
+docker compose start nifi
 ```
 
 Once it is running, go to https://localhost:8443/nifi/

@@ -17,7 +17,7 @@ This exercise requires (at least) the following services to be up & running:
 First, launch the jupyter service
 
 ```
-docker-compose start jupyter
+docker compose start jupyter
 ```
 
 * Open Jupyter: http://localhost:8888
