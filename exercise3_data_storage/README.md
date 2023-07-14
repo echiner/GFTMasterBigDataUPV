@@ -26,8 +26,8 @@ Confirm that Kafka Connect is correctly running:
 
 * Go to Control Center (http://localhost:9021/)
 * Click on the cluster and select "Connect"
-* You should see the "Connect Clusters" with one named "connect"
-* If you click con "connect" you will see the connectors (none so far) and abbility to add a new one
+* You should see the "Connect Clusters" with one named "connect-default"
+* If you click on "connect-default" you will see the connectors (none so far) and abbility to add a new one
 
 Confirm that Elasticsearch is correctly running:
 
@@ -50,8 +50,8 @@ First check the data is being loaded and create the index pattern:
 * Go to "Management" --> "Stack Management" --> "Data" --> "Index Management" and check that the index "tickers_transformed" has been created
 * If it hasn't been created, check that the Kafka Connector is working fine
 * If it has been created, create Index Pattern for Kibana
-  * Go to "Kibana" --> "Index Patterns" and click on "Create index pattern"
-  * Type "tickers*" and continue with the process
+  * Go to "Kibana" --> "Data Views" and click on "Create data view"
+  * Choose a name, type "tickers*" and continue with the process
 
 Now, take a look at the data:
 

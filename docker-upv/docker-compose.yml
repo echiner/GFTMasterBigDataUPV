@@ -27,7 +27,7 @@ services:
 
   # Confluent Kafka: Message Broker
   broker:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-server:latest
     hostname: broker
     container_name: broker
     depends_on:
@@ -45,14 +45,15 @@ services:
   
 
   kafka-connect:
-    image: confluentinc/cp-kafka-connect:latest
+    image: confluentinc/cp-server-connect:latest
+    hostname: kafka-connect
     container_name: kafka-connect
     depends_on:
       - broker
     ports:
       - 8083:8083
     environment:
-      CONNECT_BOOTSTRAP_SERVERS: "broker:29092"
+      CONNECT_BOOTSTRAP_SERVERS: 'broker:29092'
       CONNECT_REST_PORT: 8083
       CONNECT_GROUP_ID: kafka-connect
       CONNECT_CONFIG_STORAGE_TOPIC: _connect-configs
@@ -81,10 +82,11 @@ services:
     environment:
       CONTROL_CENTER_BOOTSTRAP_SERVERS: 'broker:29092'
       CONTROL_CENTER_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      CONTROL_CENTER_CONNECT_CONNECT_CLUSTER: 'kafka-connect:8083'
+      CONTROL_CENTER_CONNECT_CONNECT-DEFAULT_CLUSTER: 'http://kafka-connect:8083'
       CONTROL_CENTER_REPLICATION_FACTOR: 1
       CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
+      CONTROL_CENTER_CONNECT_HEALTHCHECK_ENDPOINT: '/connectors'
       CONFLUENT_METRICS_TOPIC_REPLICATION: 1
       PORT: 9021
   
@@ -98,6 +100,7 @@ services:
       - '9300:9300'
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false
 
   # Kibana: Elasticsearch Dashboarding
   kibana:

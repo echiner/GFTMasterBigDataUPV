@@ -108,6 +108,7 @@ Now change the NiFi workflow to send messages to Kafka instead of saving to file
   * **Hostname**: broker:29092 (as seen in the Kafka Docker Compose config in KAFKA_ADVERTISED_LISTENERS)
   * Use the "**tickers**" topic name (if you use a different one, make sure you are consistent throught the exercises)
   * Do not use transactions and set the delivery guarantee to "Best effort", in order to improve performance
+  * Terminate the outputs (in the "RELATIONSHIPS" tab)
 
 Once done and, if everything is working, go back to Control Center and check that the topic is created and the messages flowing.
 
