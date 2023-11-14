@@ -19,7 +19,7 @@ For a reference of the API follow the below link:
 Start the NiFi service:
 
 ```
-docker compose start nifi
+docker compose start nifi-upv
 ```
 
 Once it is running, go to https://localhost:8443/nifi/
@@ -31,10 +31,10 @@ Generated Username [USERNAME]
 Generated Password [PASSWORD]
 ```
 
-You can check the logs either in the Docker desktop console or using the docker logs command:
+You can check the logs either in the Docker desktop console or using the docker logs command ("grep" part only valid in Linux, Mac or Cygwin):
 
 ```
-docker logs nifi | grep Generated
+docker logs nifi-upv | grep Generated
 ```
 
 ### Part 1: Basic NiFi workflow
