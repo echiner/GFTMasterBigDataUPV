@@ -51,7 +51,7 @@ Now, **understand the code** and feel free to **play around with it** (specially
 
 Now that we have tested that we are processing data in real-time coming from Kafka and decided the logic (SQL query), let's **send the data back to another Kafka topic**. For doing so, comment the "streaming to console" part and uncomment the "sending to kafka" part.
 
-If the code is working fine, all the newly generated data will be sent to a new topic (`tickers_transformed`). You should be able to see the messages in Control Center (under the "Topics" section).
+If the code is working fine, all the newly generated data will be sent to a new topic (`tickers_transformed`). You should be able to see the messages in the Kafka UI (under the "Topics" section).
 
 ![Kafka Message](../img/spark_streaming_execution3.png)
 

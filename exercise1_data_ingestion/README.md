@@ -112,7 +112,7 @@ Now change the NiFi workflow to send messages to Kafka instead of saving to file
   * Do not use transactions and set the delivery guarantee to "Best effort", in order to improve performance
   * Terminate the outputs (in the "RELATIONSHIPS" tab)
 
-Once done and, if everything is working, go back to Control Center and check that the topic is created and the messages flowing.
+Once done and, if everything is working, go back to the Kafka UI and check that the topic is created and the messages flowing.
 
 # Reference
 

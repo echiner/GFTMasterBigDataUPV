@@ -62,9 +62,9 @@ In this section you can check the data, filter and "play around" with it.
 
 ## Troubleshooting
 
-### Unable to start Control Center
+### Unable to start Kafka UI
 
-There might be several reasons why you are not able to connect to Control Center (e.g. not enough resources or configuration issues), so we will have to upload the Connect configuration via REST API directly. Let's see how it is done.
+There might be several reasons why you are not able to connect to the Kafka UI (e.g. not enough resources or configuration issues), so we will have to upload the Connect configuration via REST API directly. Let's see how it is done.
 
 Although you can do this manually, the best approach will be to use a REST API tool like [Postman](https://www.postman.com/) (or any other). So let's download and install it.
 
