@@ -32,7 +32,7 @@ This is the summary of the components which will be launched throughout the cour
 | **Zookeeper**  | zookeeper | Software for distributed coordination  | N/A  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
 | **Kafka Connect**  | kafka-connect | Kafka Connect node  | N/A  |
-| **Confluent Control Center**  | control-center | Kafka Manager & Monitor  |  http://localhost:9021  |
+| **Kafka UI (Redpanda Console)**  | kafka-ui | Kafka Manager & Monitor  |  http://localhost:8080  |
 | **Elasticsearch**  | elasticsearch | Data storage and search engine  | http://localhost:9200  |
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |
 | **Jupyter**  | jupyter | Notebooks analytics  | http://localhost:8888  |

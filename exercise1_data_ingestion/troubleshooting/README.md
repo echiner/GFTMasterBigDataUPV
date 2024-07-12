@@ -8,12 +8,14 @@ In order to fix this we need to do the following:
 * Download the Coinbase certificate
   * Go to https://ws-feed.pro.coinbase.com/
   * Download the certificate ("Lock icon" --> Certificate --> Details --> "Copy to file..." and choose the first option "DER encoded binary")
-  * Store it in the same folder as the current trustore (PROJECT\docker\config)
+  * Store it in the same folder as the current trustore (```<GIT_PROJECT>\docker-upv\config```)
 * Add the certificate to the trustore. We will use "keytool" for that, which is included in any JDK:
 
 ```
 keytool -keystore truststore.jks -alias coinbase -import -file coinbase.cer
 ```
+
+(when asked for the keystore password, use the "Trustore Passwd" used in the exercise)
 
 Example using Windows:
 

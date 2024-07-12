@@ -16,7 +16,7 @@ This exercise requires (at least) the following services to be up & running:
 And the following are optional:
 
 * nifi (if you want to test end to end)
-* control-center (if you want to see the topic messages)
+* kafka-ui (if you want to see the topic messages)
 
 ### Setup
 

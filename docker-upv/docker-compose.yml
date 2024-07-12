@@ -69,27 +69,32 @@ services:
     volumes: 
       - ./connectors:/tmp/connectors
 
-  # Confluent Control Center: Kafka Cluster Manager
-  control-center:
-    image: confluentinc/cp-enterprise-control-center:latest
-    hostname: control-center
-    container_name: control-center
+  # Redpanda Console (Kafka UI)
+  kafka-ui:
+    image: docker.redpanda.com/redpandadata/console:latest
+    hostname: kafka-ui
+    container_name: kafka-ui
     depends_on:
       - zookeeper
       - broker
+      - kafka-connect
     ports:
-      - "9021:9021"
+      - "8080:8080"
+    entrypoint: /bin/sh
+    command: -c 'echo "$$CONSOLE_CONFIG_FILE" > /tmp/config.yml; /app/console'
     environment:
-      CONTROL_CENTER_BOOTSTRAP_SERVERS: 'broker:29092'
-      CONTROL_CENTER_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      CONTROL_CENTER_CONNECT_CONNECT-DEFAULT_CLUSTER: 'http://kafka-connect:8083'
-      CONTROL_CENTER_REPLICATION_FACTOR: 1
-      CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
-      CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
-      CONTROL_CENTER_CONNECT_HEALTHCHECK_ENDPOINT: '/connectors'
-      CONFLUENT_METRICS_TOPIC_REPLICATION: 1
-      PORT: 9021
-  
+      CONFIG_FILEPATH: /tmp/config.yml
+      CONSOLE_CONFIG_FILE: |
+        kafka:
+          brokers: ["broker:29092"]
+          schemaRegistry:
+            enabled: false
+        connect:
+          enabled: true
+          clusters:
+            - name: default
+              url: http://kafka-connect:8083
+
   # Elasticsearch: Data Storage and Search Engine
   elasticsearch:
     image: 'docker.elastic.co/elasticsearch/elasticsearch:8.8.2'

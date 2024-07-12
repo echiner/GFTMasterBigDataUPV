@@ -31,7 +31,7 @@ Follow the links below to access each exercise's details, code, etc.
 | ------------- | ------------- | ------------- | ------------- |
 | **Apache NiFi**  | nifi-upv | Data Ingestion Tool  | https://localhost:8443/nifi  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
-| **Confluent Control Center**  | control-center | Kafka Manager & Monitor  |  http://localhost:9021  |
+| **Kafka UI (Redpanda Console)**  | kafka-ui | Kafka Manager & Monitor  |  http://localhost:8080  |
 | **Spark UI** | N/A | Spark UI (jobs, environment, etc.) | http://localhost:4040 |
 | **Elasticsearch**  | elasticsearch | Data storage and search engine  | http://localhost:9200  |
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |

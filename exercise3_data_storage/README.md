@@ -12,7 +12,7 @@ This exercise requires (at least) the following services to be up & running:
 
 * zookeeper
 * broker
-* control-center
+* kafka-ui
 
 ### Setup
 
@@ -24,7 +24,7 @@ docker compose start kafka-connect elasticsearch kibana
 
 Confirm that Kafka Connect is correctly running:
 
-* Go to Control Center (http://localhost:9021/)
+* Go to the Kafka UI (http://localhost:8080/)
 * Click on the cluster and select "Connect"
 * You should see the "Connect Clusters" with one named "connect-default"
 * If you click on "connect-default" you will see the connectors (none so far) and abbility to add a new one

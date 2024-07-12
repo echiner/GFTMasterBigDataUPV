@@ -58,7 +58,7 @@ Now we need to **configure the secrets** as shown in the image and explained bel
 
 ![NiFi Service Secrets](../img/nifi-secrets.png)
 
-* Configure services (secrets)
+* Configure services (secrets):
   * Right click on "ConnectWebsocket" processor --> "Configure" --> "Properties"
   * Click on the arrow on "JettyWebSocketClient"
   * Configure the "StandardRestrictedSSLContextService" and add the secrects:
@@ -83,6 +83,8 @@ docker exec -it <nifi_container_id> /bin/bash
 ls -l <folder_configured_in_PutFile_Processor>
 ```
 
+You can also check it in the Docker Dashboard, just by clicking on the container and then the "Files" tab.
+
 ### Part 3: Send to Kafka
 
 Now, your turn. You will have to update the workflow so it sends the data to Kafka, instead of file system.
@@ -90,16 +92,16 @@ Now, your turn. You will have to update the workflow so it sends the data to Kaf
 First of all, **start the Kafka services**:
 
 ```
-docker compose start zookeeper broker control-center
+docker compose start zookeeper broker kafka-ui
 ```
 
 If the components were not launched before, do so now with "docker compose up":
 
 ```
-docker compose up zookeeper broker control-center -d
+docker compose up zookeeper broker kafka-ui -d
 ```
 
-Once it is running, go to Control Center (http://localhost:9021/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages created by us (just technical and/or internal Kafka topics).
+Once it is running, go to the Kafka UI (http://localhost:8080/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages created by us.
 
 Now change the NiFi workflow to send messages to Kafka instead of saving to file:
 
