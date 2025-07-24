@@ -29,13 +29,12 @@ This is the summary of the components which will be launched throughout the cour
 | Component | Service | Description | URL/port |
 | ------------- | ------------- | ------------- | ------------- |
 | **Apache NiFi**  | nifi-upv | Data Ingestion Tool  | https://localhost:8443/nifi  |
-| **Zookeeper**  | zookeeper | Software for distributed coordination  | N/A  |
 | **Confluent Kafka**  | broker | Message Broker  | localhost:9092  |
+| **Schema Registry**  | schema-registry | Used together with Kafka to keep message schemas  | N/A  |
 | **Kafka Connect**  | kafka-connect | Kafka Connect node  | N/A  |
 | **Kafka UI (Redpanda Console)**  | kafka-ui | Kafka Manager & Monitor  |  http://localhost:8080  |
 | **Elasticsearch**  | elasticsearch | Data storage and search engine  | http://localhost:9200  |
 | **Kibana**  | kibana | Dashboarding and Elasticsearch dev/admin tool  | http://localhost:5601  |
-| **Jupyter**  | jupyter | Notebooks analytics  | http://localhost:8888  |
 
 You can **check everything is running** by checking the Docker dashboard or by clicking on the URLs above.
 

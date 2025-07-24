@@ -92,13 +92,13 @@ Now, your turn. You will have to update the workflow so it sends the data to Kaf
 First of all, **start the Kafka services**:
 
 ```
-docker compose start zookeeper broker kafka-ui
+docker compose start schema-registry broker kafka-ui
 ```
 
 If the components were not launched before, do so now with "docker compose up":
 
 ```
-docker compose up zookeeper broker kafka-ui -d
+docker compose up schema-registry broker kafka-ui -d
 ```
 
 Once it is running, go to the Kafka UI (http://localhost:8080/) and navigate to the topics section (click on the cluster and then on "Topics"). There should be no topics and/or messages created by us.
