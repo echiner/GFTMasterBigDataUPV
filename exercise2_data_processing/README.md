@@ -10,7 +10,7 @@ In this exercise you will start reading and processing data in real-time using S
 
 This exercise requires (at least) the following services to be up & running:
 
-* zookeeper
+* schema-registry
 * broker
 
 And the following are optional:

@@ -10,7 +10,7 @@ In this exercise you will store real-time messages on Elasticsearch:
 
 This exercise requires (at least) the following services to be up & running:
 
-* zookeeper
+* schema-registry
 * broker
 * kafka-ui
 
